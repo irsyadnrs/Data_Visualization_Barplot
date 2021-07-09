@@ -1,8 +1,8 @@
 # Data Visualization using R (Barplot)
 
 Hai semua!
-Kali ini saya akan sedikit share tentang project data visualization dari hasil belajar saya di DIBIMBING.ID pada DAY 10 menggunakan R.
-Project ini menggunakan data Olist yaitu ecommerce yang terdapat di Nigeria. Pada project kali terdapat 6 data yang berisi :
+Kali ini saya akan sedikit share tentang project visualisasi data dari hasil belajar saya di DIBIMBING.ID pada DAY 10 menggunakan R.
+Project ini menggunakan data Olist yang merupakan salah satu ecommerce yang terdapat di Nigeria. Pada project kali terdapat 6 data yang berisi :
 - Olist Customer
 - Olist Order Items
 - Olist Order Payments
@@ -19,4 +19,4 @@ Ada beberapa langkah yang akan saya lakukan untuk melakukan data visualization, 
 4. Membuat kategorikal data karena saya akan menggunakan barplot
 5. Plotting menggunakan Barplot
 
-Untuk lebih jelasnya bisa dilihat pada branch #Code
+Untuk lebih jelasnya bisa dilihat pada #Code
