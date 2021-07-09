@@ -1,8 +1,22 @@
-Memanggil Library
-
+#Memanggil Library
 library(readr)
 library(ggplot2)
 library(tidyverse)
 library(visdat)
 library(tidyr)
 library(assertive)
+
+#Load Dataset
+olist_product <- read_csv("olist_products_dataset.csv")
+olist_customers <- read.csv("olist_customers_dataset.csv")
+olist_order_items <- read.csv("olist_order_items_dataset.csv")
+olist_order_payments <- read.csv("olist_order_payments_dataset.csv")
+olist_orders <- read.csv("olist_orders_dataset.csv")
+productcategory <- read.csv("product_category_name_translation.csv")
+
+#GLimpse
+glimpse(olist_product)
+glimpse(olist_order_items)
+
+
+glimpse(product_id_join)
