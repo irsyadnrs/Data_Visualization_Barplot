@@ -1,4 +1,4 @@
-# README
+# Data Visualization using R (Barplot)
 
 Hai semua!
 Kali ini saya akan sedikit share tentang project data visualization dari hasil belajar saya di DIBIMBING.ID pada DAY 10 menggunakan R.
