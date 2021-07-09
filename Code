@@ -18,5 +18,79 @@ productcategory <- read.csv("product_category_name_translation.csv")
 glimpse(olist_product)
 glimpse(olist_order_items)
 
+#Join
+product_id_join <-  olist_order_items %>%
+  inner_join(olist_product, by = c("product_id" = "product_id"))
+  
+#Perbandingan Total Buyer yang membeli 3 barang (Periode Q1)
+#mengubah character ke date
+timeconvert <- product_id_join$shipping_limit_date
+timeconvert <- as.Date(timeconvert)
+timeconvert
 
-glimpse(product_id_join)
+#masukkan time ke dataframe
+product_id_join <- cbind(product_id_join, timeconvert)
+
+#filter time per Q1 dari Januari - Maret 2017
+product_id_join <- product_id_join %>%
+  filter(timeconvert >= as.Date("2017-01-01") & timeconvert <= as.Date("2017-03-30"))
+
+#Membuat data untuk beleza_saude, automotivo dan informatica_acessorios
+#beleza_saude
+databeleza <- product_id_join %>%
+  group_by(product_category_name) %>%
+  filter(product_category_name == "beleza_saude")
+
+#automotivo
+datautomotivo <- product_id_join %>%
+  group_by(product_category_name) %>%
+  filter(product_category_name == "automotivo")
+
+#informatica_acessorios
+datainformatica <- product_id_join %>%
+  group_by(product_category_name) %>%
+  filter(product_category_name == "informatica_acessorios")
+
+
+#menghitung Jumlah Buyer
+#beleza_saude
+jumlahbeleza <- length(databeleza$product_category_name)
+
+#automotivo
+jumlahautomotivo <- length(datautomotivo$product_category_name)
+
+#informatica
+jumlahinformatica <- length(datainformatica$product_category_name)
+
+#Preplotting
+#membuat Kategorikal data
+Kategoribarang = c(jumlahbeleza, jumlahautomotivo, jumlahinformatica)
+
+#Assign Kategoribarang ke nama_barang
+names(Kategoribarang) <- c("Health & Beauty", "Automotive", "Computer Accessories")
+
+#Plotting memakai bar plot
+bar_olist <- barplot(
+  Kategoribarang,
+  border = "white",
+  main = "Total Buyer from 3 Categories on Q1 2017",
+  xlab = "Product Category",
+  ylab = "Total Buyer",
+  space = 0.5,
+  col = rainbow(3),
+  ylim = c(0,600),
+  legend.text = c("Health & Beauty", "Automotive", "Computer Accessories"),
+  args.legend = list(
+    title = "Product Category",
+    x = "topright"
+  )
+)
+
+## add text label to barplot
+text(
+  bar_olist, 
+  # adjust position, named_vector + 26(jarak dari batas)
+  Kategoribarang + 26, 
+  # add labels
+  labels = Kategoribarang
+)
