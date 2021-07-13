@@ -19,4 +19,6 @@ Ada beberapa langkah yang akan saya lakukan untuk melakukan data visualization, 
 4. Membuat kategorikal data karena saya akan menggunakan barplot
 5. Plotting menggunakan Barplot
 
-Untuk lebih jelasnya bisa dilihat pada #Code
+Untuk lebih jelasnya bisa dilihat pada #Code.
+Hasil dari data visualization menggunakan barplot seperti berikut ini
+![alt text](https://github.com/irsyadnrs/Data_Visualization_Barplot/blob/e9d9241993a8a0bad635de8ca27a1d92a497792d/Barplot%20Day%2010)
